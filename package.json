@@ -1,0 +1,41 @@
+{
+    "name": "@purinton/project-template",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "A template for starting new Node.js projects.",
+    "main": "project.mjs",
+    "scripts": {
+        "test": "npx --node-options=\"--experimental-vm-modules --no-warnings\" jest --detectOpenHandles --silent"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/purinton/project-template.git"
+    },
+    "keywords": [
+        "project-template",
+        "nodejs",
+        "starter",
+        "template"
+    ],
+    "author": "Russell Purinton <russell@purinton.us>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/purinton/project-template/issues"
+    },
+    "homepage": "https://github.com/purinton/project-template#readme",
+    "devDependencies": {
+        "jest": "^30.0.0"
+    },
+    "jest": {
+        "testEnvironment": "node",
+        "testMatch": [
+            "**/?(*.)+(spec|test).[jt]s?(x)",
+            "**/?(*.)+(spec|test).mjs",
+            "**/?(*.)+(spec|test).cjs"
+        ]
+    },
+    "dependencies": {
+        "@purinton/common": "^1.0.8",
+        "dotenv": "^16.5.0"
+    }
+}
