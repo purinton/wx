@@ -3,7 +3,7 @@
     "type": "module",
     "version": "1.0.0",
     "description": "A template for starting new Node.js projects.",
-    "main": "project.mjs",
+    "main": "project-template.mjs",
     "scripts": {
         "test": "npx --node-options=\"--experimental-vm-modules --no-warnings\" jest --detectOpenHandles --silent"
     },
