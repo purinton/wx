@@ -1,7 +1,7 @@
 {
     "name": "@purinton/project-template",
     "type": "module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A template for starting new Node.js projects.",
     "main": "project-template.mjs",
     "scripts": {
@@ -36,7 +36,7 @@
         ]
     },
     "dependencies": {
-        "@purinton/common": "^1.0.12",
+        "@purinton/common": "^1.0.13",
         "dotenv": "^16.5.0"
     }
 }
