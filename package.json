@@ -5,6 +5,7 @@
     "description": "A template for starting new Node.js projects.",
     "main": "project-template.mjs",
     "scripts": {
+        "start": "node project-template.mjs",
         "test": "npx --node-options=\"--experimental-vm-modules --no-warnings\" jest --detectOpenHandles --silent"
     },
     "repository": {
