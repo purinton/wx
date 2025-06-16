@@ -2,7 +2,7 @@
     "name": "@purinton/discord-template",
     "type": "module",
     "version": "1.0.0",
-    "description": "A template for starting new Node.js projects.",
+    "description": "A modern Discord app built with Node.js, based on the purinton/discord foundation.",
     "main": "discord-template.mjs",
     "scripts": {
         "start": "node discord-template.mjs",
@@ -14,6 +14,9 @@
     },
     "keywords": [
         "discord-template",
+        "discord",
+        "discord-bot",
+        "discord-app",
         "nodejs"
     ],
     "author": "Russell Purinton <russell@purinton.us>",
