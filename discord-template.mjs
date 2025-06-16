@@ -7,7 +7,7 @@ registerHandlers({ log });
 registerSignals({ log });
 
 (async () => {
-    await createDiscord({
+    const client = await createDiscord({
         log,
         rootDir: path(import.meta),
         intents: {
@@ -16,4 +16,8 @@ registerSignals({ log });
             MessageContent: true
         }
     });
+    registerSignals({ log, shutdownHook: async (signal) => {
+        await client.destroy();
+        log.debug(`Client destroyed on ${signal}`);
+    }});
 })();
