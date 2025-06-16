@@ -2,7 +2,7 @@
 
 ## @purinton/discord-template [![npm version](https://img.shields.io/npm/v/@purinton/discord-template.svg)](https://www.npmjs.com/package/@purinton/discord-template)[![license](https://img.shields.io/github/license/purinton/discord-template.svg)](LICENSE)[![build status](https://github.com/purinton/discord-template/actions/workflows/nodejs.yml/badge.svg)](https://github.com/purinton/discord-template/actions)
 
-A modern Discord app built with Node.js, based on the [@purinton/discord-template](https://github.com/purinton/discord-template) foundation.
+A modern Discord app built with Node.js, based on the [@purinton/discord](https://github.com/purinton/discord) foundation.
 
 ---
 
