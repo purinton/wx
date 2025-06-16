@@ -13,11 +13,13 @@ registerSignals({ log });
         intents: {
             Guilds: true,
             GuildMessages: true,
-            MessageContent: true
-        }
+            MessageContent: true,
+        },
+        context: {
+            presence: { activities: [{ name: 'example', type: 4 }], status: 'online' },
+        },
     });
-    registerSignals({ log, shutdownHook: async (signal) => {
+    registerSignals({ shutdownHook: async () => {
         await client.destroy();
-        log.debug(`Client destroyed on ${signal}`);
     }});
 })();
