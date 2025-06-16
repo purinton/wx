@@ -1,6 +1,19 @@
 #!/usr/bin/env node
 import 'dotenv/config';
-import { log, registerHandlers, registerSignals } from '@purinton/common';
+import { log, path, registerHandlers, registerSignals } from '@purinton/common';
+import { createDiscord } from '@purinton/discord';
+
 registerHandlers({ log });
 registerSignals({ log });
-log.info('discord-template Started');
+
+(async () => {
+    await createDiscord({
+        log,
+        rootDir: path(import.meta),
+        intents: {
+            Guilds: true,
+            GuildMessages: true,
+            MessageContent: true
+        }
+    });
+})();
