@@ -1,6 +1,6 @@
 # [![Purinton Dev](https://purinton.us/logos/brand.png)](https://discord.gg/QSBxQnX7PF)
 
-## @purinton/project-template [![npm version](https://img.shields.io/npm/v/@purinton/project-template.svg)](https://www.npmjs.com/package/@purinton/project-template)[![license](https://img.shields.io/github/license/purinton/project-template.svg)](LICENSE)[![build status](https://github.com/purinton/project-template/actions/workflows/nodejs.yml/badge.svg)](https://github.com/purinton/project-template/actions)
+## @purinton/discord-template [![npm version](https://img.shields.io/npm/v/@purinton/discord-template.svg)](https://www.npmjs.com/package/@purinton/discord-template)[![license](https://img.shields.io/github/license/purinton/discord-template.svg)](LICENSE)[![build status](https://github.com/purinton/discord-template/actions/workflows/nodejs.yml/badge.svg)](https://github.com/purinton/discord-template/actions)
 
 A starter template for new Node.js projects. Use this as a foundation for your next application or service.
 
@@ -29,7 +29,7 @@ A starter template for new Node.js projects. Use this as a foundation for your n
 1. **Clone this template:**
 
    ```bash
-   git clone https://github.com/purinton/project-template.git your-project-name
+   git clone https://github.com/purinton/discord-template.git your-project-name
    cd your-project-name
    rm -rf .git
    git init
@@ -80,5 +80,5 @@ For help or questions, join the community:
 
 ## Links
 
-- [GitHub](https://github.com/purinton/project-template)
+- [GitHub](https://github.com/purinton/discord-template)
 - [Discord](https://discord.gg/QSBxQnX7PF)
