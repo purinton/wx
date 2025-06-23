@@ -29,8 +29,8 @@ A starter template for new Node.js projects. Use this as a foundation for your n
 1. **Clone this template:**
 
    ```bash
-   git clone https://github.com/purinton/project-template.git your-project-name
-   cd your-project-name
+   git clone https://github.com/purinton/project-template.git
+   cd project-template
    rm -rf .git
    git init
    npm install
@@ -43,11 +43,11 @@ A starter template for new Node.js projects. Use this as a foundation for your n
 
 ## Development
 
-- Main entry: `project.mjs`
+- Main entry: `project-template.mjs`
 - Start your app:
 
   ```bash
-  node project.mjs
+  node project-template.mjs
   ```
 
 - Add your code in new files and import as needed.
@@ -80,5 +80,7 @@ For help or questions, join the community:
 
 ## Links
 
-- [GitHub](https://github.com/purinton/project-template)
+- [GitHub Repo](https://github.com/purinton/project-template)
+- [GitHub Org](https://github.com/purinton)
+- [GitHub Personal](https://github.com/rpurinton)
 - [Discord](https://discord.gg/QSBxQnX7PF)
