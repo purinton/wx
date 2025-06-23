@@ -127,7 +127,8 @@ For help, questions, or to chat with the author and community, visit:
 
 ## Links
 
-- [GitHub (Template)](https://github.com/purinton/discord-template)
-- [GitHub (Org)](https://github.com/purinton)
-- [GitHub (Personal)](https://github.com/rpurinton)
+- [GitHub Repo](https://github.com/purinton/discord-template)
+- [GitHub Org](https://github.com/purinton)
+- [GitHub Personal](https://github.com/rpurinton)
+>>>>>>> upstream/master
 - [Discord](https://discord.gg/QSBxQnX7PF)
