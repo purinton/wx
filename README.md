@@ -70,9 +70,11 @@ A starter template for new Node.js projects. Use this as a foundation for your n
 
 ## Support
 
-For help or questions, join the community:
+For help, questions, or to chat with the author and community, visit:
 
-[Purinton Dev on Discord](https://discord.gg/QSBxQnX7PF)
+[![Discord](https://purinton.us/logos/discord_96.png)](https://discord.gg/QSBxQnX7PF)[![Purinton Dev](https://purinton.us/logos/purinton_96.png)](https://discord.gg/QSBxQnX7PF)
+
+**[Purinton Dev on Discord](https://discord.gg/QSBxQnX7PF)**
 
 ## License
 
