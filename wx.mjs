@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import 'dotenv/config';
-import * as report from '../src/report.mjs';
+import * as report from './src/report.mjs';
 import * as owm from '@purinton/openweathermap';
 import { createOpenAI } from '@purinton/openai';
 import { createDiscord } from '@purinton/discord';
