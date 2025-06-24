@@ -46,7 +46,7 @@ export function buildWeatherEmbed({ weatherData, weatherReport, locationName, un
         ? `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`
         : null;
     return {
-        title: msg(locale, 'embed_title', `Weather Report for ${locationName}`).replace('{location}', locationName),
+        title: msg('embed_title', `Weather Report for ${locationName}`).replace('{location}', locationName),
         color: 0x808080,
         description: weatherReport,
         fields: [
