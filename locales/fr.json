@@ -1,3 +1,20 @@
 {
-    "help": "Ceci est le texte d'aide."
+    "help": "**Wx Bot – Aide Météo**\n\nObtenez la météo actuelle pour n'importe quelle ville, région ou code postal.\n\n**Commande**  \n`/weather <emplacement> [unités]`\n\n**Paramètres**  \n• `<emplacement>` – Nom d'une ville (ex. Londres), région (ex. CA) ou code postal (ex. 90210). Obligatoire.\n• `[unités]` – Optionnel. Unités de température : Fahrenheit (F) ou Celsius (C).\n\n**Rapports Automatisés**  \nLes opérateurs peuvent configurer des rapports automatisés en spécifiant des `channel_id`(s), lieu(x) et un horaire cron dans les fichiers de configuration.\n\n**Exemples**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Veuillez fournir un emplacement.",
+    "invalidLocation": "Emplacement fourni invalide.",
+    "error": "Une erreur est survenue lors du traitement de votre demande.",
+    "embed_title": "Rapport météo pour {location}",
+    "embed_temp": "Température",
+    "embed_feelslike": "Ressenti",
+    "embed_humidity": "Humidité",
+    "embed_condition": "Condition",
+    "embed_na": "N/A",
+    "embed_wind": "Vent",
+    "embed_pressure": "Pression",
+    "embed_getting_location": "⏳ Récupération des données de localisation...",
+    "embed_getting_location_ok": "✅ Récupération des données de localisation... OK !",
+    "embed_getting_weather": "⏳ Récupération des données météorologiques...",
+    "embed_getting_weather_ok": "✅ Récupération des données météorologiques... OK !",
+    "embed_generating_report": "⏳ Génération du rapport...",
+    "embed_generating_report_ok": "✅ Génération du rapport... OK !"
 }

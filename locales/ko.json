@@ -1,3 +1,20 @@
 {
-    "help": "이것은 도움말 텍스트입니다."
+    "help": "**Wx Bot – 날씨 도움말**\n\n어떤 도시, 지역 또는 우편번호의 현재 날씨를 확인하세요.\n\n**명령어**  \n`/weather <location> [units]`\n\n**매개변수**  \n• `<location>` – 도시 이름(예: London), 지역(예: CA) 또는 우편번호(예: 90210). 필수입니다.\n• `[units]` – 선택 사항. 온도 단위: 화씨(F) 또는 섭씨(C).\n\n**자동 보고서**  \n운영자는 설정 파일에서 `channel_id`(들), 위치 및 크론 일정을 지정하여 자동 보고서를 구성할 수 있습니다.\n\n**예시**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "위치를 제공해주세요.",
+    "invalidLocation": "유효하지 않은 위치입니다.",
+    "error": "요청을 처리하는 중 오류가 발생했습니다.",
+    "embed_title": "{location} 날씨 보고서",
+    "embed_temp": "온도",
+    "embed_feelslike": "체감 온도",
+    "embed_humidity": "습도",
+    "embed_condition": "상태",
+    "embed_na": "N/A",
+    "embed_wind": "바람",
+    "embed_pressure": "기압",
+    "embed_getting_location": "⏳ 위치 데이터 가져오는 중...",
+    "embed_getting_location_ok": "✅ 위치 데이터 가져오는 중... 완료!",
+    "embed_getting_weather": "⏳ 날씨 데이터 가져오는 중...",
+    "embed_getting_weather_ok": "✅ 날씨 데이터 가져오는 중... 완료!",
+    "embed_generating_report": "⏳ 보고서 생성 중...",
+    "embed_generating_report_ok": "✅ 보고서 생성 중... 완료!"
 }

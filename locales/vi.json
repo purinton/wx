@@ -1,3 +1,20 @@
 {
-    "help": "Đây là văn bản trợ giúp."
+    "help": "**Wx Bot – Trợ giúp về thời tiết**\n\nNhận thông tin thời tiết hiện tại cho bất kỳ thành phố, khu vực hoặc mã ZIP/bưu điện nào.\n\n**Lệnh**  \n`/weather <vị trí> [đơn vị]`\n\n**Tham số**  \n• `<vị trí>` – Tên thành phố (ví dụ London), khu vực (ví dụ CA) hoặc mã bưu điện (ví dụ 90210). Bắt buộc.\n• `[đơn vị]` – Tùy chọn. Đơn vị nhiệt độ: Fahrenheit (F) hoặc Celsius (C).\n\n**Báo cáo tự động**  \nNgười điều hành có thể cấu hình các báo cáo tự động bằng cách chỉ định `channel_id`(s), vị trí và lịch biểu cron trong các tệp cấu hình.\n\n**Ví dụ**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Vui lòng cung cấp vị trí.",
+    "invalidLocation": "Vị trí không hợp lệ.",
+    "error": "Đã xảy ra lỗi khi xử lý yêu cầu của bạn.",
+    "embed_title": "Báo cáo thời tiết cho {location}",
+    "embed_temp": "Nhiệt độ",
+    "embed_feelslike": "Cảm giác như",
+    "embed_humidity": "Độ ẩm",
+    "embed_condition": "Tình trạng",
+    "embed_na": "N/A",
+    "embed_wind": "Gió",
+    "embed_pressure": "Áp suất",
+    "embed_getting_location": "⏳ Đang lấy dữ liệu vị trí...",
+    "embed_getting_location_ok": "✅ Đang lấy dữ liệu vị trí... Hoàn thành!",
+    "embed_getting_weather": "⏳ Đang lấy dữ liệu thời tiết...",
+    "embed_getting_weather_ok": "✅ Đang lấy dữ liệu thời tiết... Hoàn thành!",
+    "embed_generating_report": "⏳ Đang tạo báo cáo...",
+    "embed_generating_report_ok": "✅ Đang tạo báo cáo... Hoàn thành!"
 }

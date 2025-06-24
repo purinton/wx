@@ -1,3 +1,20 @@
 {
-    "help": "Tämä on ohjeteksti."
+    "help": "**Wx Bot – Sää Ohje**\n\nHanki nykyinen sää missä tahansa kaupungissa, alueella tai postinumerolla.\n\n**Komento**  \n`/weather <paikka> [yksiköt]`\n\n**Parametrit**  \n• `<paikka>` – Kaupungin nimi (esim. Helsinki), alue (esim. Uusimaa) tai postinumero (esim. 00100). Pakollinen.\n• `[yksiköt]` – Valinnainen. Lämpötilayksiköt: Fahrenheit (F) tai Celsius (C).\n\n**Automaattiset Raportit**  \nOperaattorit voivat määrittää automaattiset raportit määrittelemällä `channel_id`(t), paikka(t) ja cron aikataulun konfiguraatiotiedostoissa.\n\n**Esimerkkejä**  \n```md\n/weather Tokio\n/weather New York\n/weather 10001\n/weather Pariisi C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Ole hyvä ja anna paikka.",
+    "invalidLocation": "Annettu paikka on virheellinen.",
+    "error": "Virhe käsiteltäessä pyyntöäsi.",
+    "embed_title": "Sääraportti paikalle {location}",
+    "embed_temp": "Lämpötila",
+    "embed_feelslike": "Tuntuu kuin",
+    "embed_humidity": "Kosteus",
+    "embed_condition": "Olosuhteet",
+    "embed_na": "Ei saatavilla",
+    "embed_wind": "Tuuli",
+    "embed_pressure": "Ilmanpaine",
+    "embed_getting_location": "⏳ Haetaan paikkatietoja...",
+    "embed_getting_location_ok": "✅ Paikkatietojen hakeminen... OK!",
+    "embed_getting_weather": "⏳ Haetaan säätietoja...",
+    "embed_getting_weather_ok": "✅ Säätietojen hakeminen... OK!",
+    "embed_generating_report": "⏳ Luodaan raporttia...",
+    "embed_generating_report_ok": "✅ Raportin luonti... OK!"
 }

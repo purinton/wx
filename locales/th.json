@@ -1,3 +1,20 @@
 {
-    "help": "นี่คือข้อความช่วยเหลือ"
+    "help": "**Wx Bot – ความช่วยเหลือเรื่องสภาพอากาศ**\n\nรับข้อมูลสภาพอากาศปัจจุบันสำหรับเมือง, ภูมิภาค หรือรหัสไปรษณีย์ใด ๆ\n\n**คำสั่ง**  \n`/weather <location> [units]`\n\n**พารามิเตอร์**  \n• `<location>` – ชื่อเมือง (เช่น London), ภูมิภาค (เช่น CA) หรือรหัสไปรษณีย์ (เช่น 90210) จำเป็นต้องระบุ\n• `[units]` – ตัวเลือก เครื่องวัดอุณหภูมิ: ฟาเรนไฮต์ (F) หรือ เซลเซียส (C)\n\n**รายงานอัตโนมัติ**  \nผู้ดำเนินการสามารถตั้งค่ารายงานอัตโนมัติโดยกำหนด `channel_id`(s), สถานที่ และตารางเวลาตาม cron ในไฟล์ config\n\n**ตัวอย่าง**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "กรุณาระบุสถานที่",
+    "invalidLocation": "สถานที่ที่ระบุไม่ถูกต้อง",
+    "error": "เกิดข้อผิดพลาดขณะประมวลผลคำขอของคุณ",
+    "embed_title": "รายงานสภาพอากาศสำหรับ {location}",
+    "embed_temp": "อุณหภูมิ",
+    "embed_feelslike": "รู้สึกเหมือน",
+    "embed_humidity": "ความชื้น",
+    "embed_condition": "สภาพอากาศ",
+    "embed_na": "ไม่มีข้อมูล",
+    "embed_wind": "ลม",
+    "embed_pressure": "ความกดอากาศ",
+    "embed_getting_location": "⏳ กำลังดึงข้อมูลสถานที่...",
+    "embed_getting_location_ok": "✅ ดึงข้อมูลสถานที่... เสร็จสมบูรณ์!",
+    "embed_getting_weather": "⏳ กำลังดึงข้อมูลสภาพอากาศ...",
+    "embed_getting_weather_ok": "✅ ดึงข้อมูลสภาพอากาศ... เสร็จสมบูรณ์!",
+    "embed_generating_report": "⏳ กำลังสร้างรายงาน...",
+    "embed_generating_report_ok": "✅ สร้างรายงาน... เสร็จสมบูรณ์!"
 }

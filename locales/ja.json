@@ -1,3 +1,20 @@
 {
-    "help": "これはヘルプテキストです。"
+    "help": "**Wx Bot – 天気のヘルプ**\n\n任意の都市、地域、または郵便番号の現在の天気を取得します。\n\n**コマンド**  \n`/weather <location> [units]`\n\n**パラメータ**  \n• `<location>` – 都市名（例：London）、地域（例：CA）、または郵便番号（例：90210）。必須です。\n• `[units]` – 任意。温度単位：華氏（F）または摂氏（C）。\n\n**自動レポート**  \n運営者は config ファイルで `channel_id`、場所、cron スケジュールを指定して自動レポートの設定ができます。\n\n**例**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "場所を指定してください。",
+    "invalidLocation": "無効な場所が指定されました。",
+    "error": "リクエストの処理中にエラーが発生しました。",
+    "embed_title": "{location} の天気報告",
+    "embed_temp": "気温",
+    "embed_feelslike": "体感温度",
+    "embed_humidity": "湿度",
+    "embed_condition": "天候",
+    "embed_na": "該当なし",
+    "embed_wind": "風",
+    "embed_pressure": "気圧",
+    "embed_getting_location": "⏳ 位置情報を取得しています...",
+    "embed_getting_location_ok": "✅ 位置情報の取得... 完了！",
+    "embed_getting_weather": "⏳ 天気情報を取得しています...",
+    "embed_getting_weather_ok": "✅ 天気情報の取得... 完了！",
+    "embed_generating_report": "⏳ レポートを生成しています...",
+    "embed_generating_report_ok": "✅ レポートの生成... 完了！"
 }

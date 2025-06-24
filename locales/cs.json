@@ -1,3 +1,20 @@
 {
-    "help": "Ez a súgószöveg."
+    "help": "**Wx Bot – Pomoc s počasím**\n\nZískejte aktuální počasí pro jakékoliv město, region nebo PSČ.\n\n**Příkaz**  \n`/weather <lokace> [jednotky]`\n\n**Parametry**  \n• `<lokace>` – Název města (např. Praha), regionu (např. CA) nebo PSČ (např. 90210). Povinné.\n• `[jednotky]` – Volitelné. Jednotky teploty: Fahrenheit (F) nebo Celsia (C).\n\n**Automatické zprávy**  \nProvozovatelé mohou nastavit automatické zprávy zadáním `channel_id`(ů), lokací a cron plánu v konfiguračních souborech.\n\n**Příklady**  \n```md\n/weather Tokio\n/weather New York\n/weather 10001\n/weather Paříž C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Prosím, zadejte lokaci.",
+    "invalidLocation": "Byla zadána neplatná lokace.",
+    "error": "Došlo k chybě při zpracování vaší žádosti.",
+    "embed_title": "Počasí pro {location}",
+    "embed_temp": "Teplota",
+    "embed_feelslike": "Pocitová teplota",
+    "embed_humidity": "Vlhkost",
+    "embed_condition": "Podmínky",
+    "embed_na": "N/A",
+    "embed_wind": "Vítr",
+    "embed_pressure": "Tlak",
+    "embed_getting_location": "⏳ Získávám údaje o lokaci...",
+    "embed_getting_location_ok": "✅ Získávání údajů o lokaci... Hotovo!",
+    "embed_getting_weather": "⏳ Získávám údaje o počasí...",
+    "embed_getting_weather_ok": "✅ Získávání údajů o počasí... Hotovo!",
+    "embed_generating_report": "⏳ Vytvářím zprávu...",
+    "embed_generating_report_ok": "✅ Vytváření zprávy... Hotovo!"
 }

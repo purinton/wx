@@ -1,3 +1,20 @@
 {
-    "help": "Dette er hjelpeteksten."
+    "help": "**Wx Bot – Værhjelp**\n\nFå dagens vær for en hvilken som helst by, region eller postnummer.\n\n**Kommando**  \n`/weather <location> [units]`\n\n**Parametere**  \n• `<location>` – Navnet på en by (f.eks. Oslo), region (f.eks. Viken), eller postnummer (f.eks. 0150). Obligatorisk.\n• `[units]` – Valgfritt. Temperatur enheter: Fahrenheit (F) eller Celsius (C).\n\n**Automatiske rapporter**  \nOperatorer kan konfigurere automatiske rapporter ved å spesifisere `channel_id`(er), lokasjon(er), og en cron-plan i konfigurasjonsfilene.\n\n**Eksempler**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Vennligst oppgi en lokasjon.",
+    "invalidLocation": "Ugyldig lokasjon oppgitt.",
+    "error": "Det oppstod en feil under behandlingen av forespørselen din.",
+    "embed_title": "Værrapport for {location}",
+    "embed_temp": "Temperatur",
+    "embed_feelslike": "Føles som",
+    "embed_humidity": "Luftfuktighet",
+    "embed_condition": "Forhold",
+    "embed_na": "N/A",
+    "embed_wind": "Vind",
+    "embed_pressure": "Trykk",
+    "embed_getting_location": "⏳ Henter lokasjonsdata...",
+    "embed_getting_location_ok": "✅ Henter lokasjonsdata... OK!",
+    "embed_getting_weather": "⏳ Henter værdata...",
+    "embed_getting_weather_ok": "✅ Henter værdata... OK!",
+    "embed_generating_report": "⏳ Genererer rapport...",
+    "embed_generating_report_ok": "✅ Genererer rapport... OK!"
 }

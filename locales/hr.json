@@ -1,3 +1,20 @@
 {
-    "help": "Ovo je tekst pomoći."
+    "help": "**Wx Bot – Pomoć za vremensku prognozu**\n\nDohvatite trenutne vremenske uvjete za bilo koji grad, regiju ili poštanski broj.\n\n**Naredba**  \n`/weather <lokacija> [jedinice]`\n\n**Parametri**  \n• `<lokacija>` – Naziv grada (npr. London), regije (npr. CA) ili poštanskog broja (npr. 90210). Obavezno.\n• `[jedinice]` – Neobavezno. Jedinice temperature: Fahrenheit (F) ili Celzij (C).\n\n**Automatizirani izvještaji**  \nOperateri mogu konfigurirati automatizirane izvještaje određivanjem `channel_id`(ova), lokacije(a) i rasporeda prema cron-u u konfiguracijskim datotekama.\n\n**Primjeri**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Molimo unesite lokaciju.",
+    "invalidLocation": "Unesena lokacija nije valjana.",
+    "error": "Došlo je do pogreške prilikom obrade vašeg zahtjeva.",
+    "embed_title": "Vremenski izvještaj za {location}",
+    "embed_temp": "Temperatura",
+    "embed_feelslike": "Osjećaj",
+    "embed_humidity": "Vlaga",
+    "embed_condition": "Stanje",
+    "embed_na": "N/A",
+    "embed_wind": "Vjetar",
+    "embed_pressure": "Pritisak",
+    "embed_getting_location": "⏳ Dohvaćam podatke o lokaciji...",
+    "embed_getting_location_ok": "✅ Dohvaćam podatke o lokaciji... Uspješno!",
+    "embed_getting_weather": "⏳ Dohvaćam vremenske podatke...",
+    "embed_getting_weather_ok": "✅ Dohvaćam vremenske podatke... Uspješno!",
+    "embed_generating_report": "⏳ Generiranje izvještaja...",
+    "embed_generating_report_ok": "✅ Generiranje izvještaja... Uspješno!"
 }

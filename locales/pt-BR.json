@@ -1,3 +1,20 @@
 {
-    "help": "Este é o texto de ajuda."
+    "help": "**Wx Bot – Ajuda sobre o Tempo**\n\nObtenha a previsão do tempo atual para qualquer cidade, região ou CEP/código postal.\n\n**Comando**  \n`/weather <local> [unidades]`\n\n**Parâmetros**  \n• `<local>` – Nome de uma cidade (ex: Londres), região (ex: SP), ou código postal (ex: 01000-000). Obrigatório.\n• `[unidades]` – Opcional. Unidades de temperatura: Fahrenheit (F) ou Celsius (C).\n\n**Relatórios Automáticos**  \nOperadores podem configurar relatórios automáticos especificando `channel_id`(s), local(is) e uma agenda cron nos arquivos de configuração.\n\n**Exemplos**  \n```md\n/weather Tóquio\n/weather Nova York\n/weather 01000-000\n/weather Paris C\n/weather \"São Francisco\" F\n```",
+    "noLocation": "Por favor, forneça um local.",
+    "invalidLocation": "Local fornecido inválido.",
+    "error": "Ocorreu um erro ao processar sua solicitação.",
+    "embed_title": "Relatório do Tempo para {location}",
+    "embed_temp": "Temperatura",
+    "embed_feelslike": "Sensação Térmica",
+    "embed_humidity": "Umidade",
+    "embed_condition": "Condição",
+    "embed_na": "N/D",
+    "embed_wind": "Vento",
+    "embed_pressure": "Pressão",
+    "embed_getting_location": "⏳ Obtendo dados de localização...",
+    "embed_getting_location_ok": "✅ Obtendo dados de localização... OK!",
+    "embed_getting_weather": "⏳ Obtendo dados do tempo...",
+    "embed_getting_weather_ok": "✅ Obtendo dados do tempo... OK!",
+    "embed_generating_report": "⏳ Gerando relatório...",
+    "embed_generating_report_ok": "✅ Gerando relatório... OK!"
 }

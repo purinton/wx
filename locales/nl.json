@@ -1,3 +1,20 @@
 {
-    "help": "Dit is de helptekst."
+    "help": "**Wx Bot – Weer Help**\n\nKrijg het huidige weer voor elke stad, regio of postcode.\n\n**Command**  \n`/weather <location> [units]`\n\n**Parameters**  \n• `<location>` – Naam van een stad (bijv. Amsterdam), regio (bijv. NH), of postcode (bijv. 1011). Vereist.\n• `[units]` – Optioneel. Temperatuureenheden: Fahrenheit (F) of Celsius (C).\n\n**Geautomatiseerde Rapporten**  \nOperators kunnen geautomatiseerde rapporten configureren door `channel_id`(s), locatie(s) en een cron schema op te geven in de configuratiebestanden.\n\n**Voorbeelden**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Parijs C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Geef een locatie op.",
+    "invalidLocation": "Ongeldige locatie opgegeven.",
+    "error": "Er is een fout opgetreden bij het verwerken van je verzoek.",
+    "embed_title": "Weerrapport voor {location}",
+    "embed_temp": "Temperatuur",
+    "embed_feelslike": "Gevoelstemperatuur",
+    "embed_humidity": "Luchtvochtigheid",
+    "embed_condition": "Conditie",
+    "embed_na": "N.v.t.",
+    "embed_wind": "Wind",
+    "embed_pressure": "Luchtdruk",
+    "embed_getting_location": "⏳ Locatiegegevens ophalen...",
+    "embed_getting_location_ok": "✅ Locatiegegevens ophalen... GELUKT!",
+    "embed_getting_weather": "⏳ Weergegevens ophalen...",
+    "embed_getting_weather_ok": "✅ Weergegevens ophalen... GELUKT!",
+    "embed_generating_report": "⏳ Rapport genereren...",
+    "embed_generating_report_ok": "✅ Rapport genereren... GELUKT!"
 }

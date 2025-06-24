@@ -1,3 +1,20 @@
 {
-    "help": "Detta är hjälpinformationen."
+    "help": "**Wx Bot – Väderhjälp**\n\nFå det aktuella vädret för vilken stad, region eller postnummer som helst.\n\n**Kommando**  \n`/weather <plats> [enheter]`\n\n**Parameterar**  \n• `<plats>` – Namn på stad (t.ex. London), region (t.ex. CA) eller postnummer (t.ex. 90210). Obligatoriskt.\n• `[enheter]` – Valfritt. Temperaturenheter: Fahrenheit (F) eller Celsius (C).\n\n**Automatiska rapporter**  \nOperatörer kan konfigurera automatiska rapporter genom att ange `channel_id`(s), plats(er) och ett cron-schema i konfigurationsfilerna.\n\n**Exempel**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Ange en plats.",
+    "invalidLocation": "Ogiltig plats angiven.",
+    "error": "Ett fel uppstod vid behandlingen av din begäran.",
+    "embed_title": "Väderrapport för {location}",
+    "embed_temp": "Temperatur",
+    "embed_feelslike": "Känns som",
+    "embed_humidity": "Luftfuktighet",
+    "embed_condition": "Tillstånd",
+    "embed_na": "Ej tillgängligt",
+    "embed_wind": "Vind",
+    "embed_pressure": "Tryck",
+    "embed_getting_location": "⏳ Hämtar platsdata...",
+    "embed_getting_location_ok": "✅ Hämtar platsdata... OK!",
+    "embed_getting_weather": "⏳ Hämtar väderdata...",
+    "embed_getting_weather_ok": "✅ Hämtar väderdata... OK!",
+    "embed_generating_report": "⏳ Genererar rapport...",
+    "embed_generating_report_ok": "✅ Genererar rapport... OK!"
 }

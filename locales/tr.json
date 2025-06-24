@@ -1,3 +1,20 @@
 {
-    "help": "Bu yardım metnidir."
+    "help": "**Wx Bot – Hava Durumu Yardımı**\n\nHerhangi bir şehir, bölge veya posta kodu için güncel hava durumunu alın.\n\n**Komut**  \n`/weather <konum> [birimler]`\n\n**Parametreler**  \n• `<konum>` – Bir şehir adı (ör. İstanbul), bölge (ör. TR), veya posta kodu (ör. 34000). Zorunlu.\n• `[birimler]` – Opsiyonel. Sıcaklık birimleri: Fahrenheit (F) veya Santigrat (C).\n\n**Otomatik Raporlar**  \nOperatörler, konfigürasyon dosyalarında `channel_id`(ler), konum(lar) ve cron takvimi belirterek otomatik raporları yapılandırabilirler.\n\n**Örnekler**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Lütfen bir konum belirtin.",
+    "invalidLocation": "Geçersiz konum sağlandı.",
+    "error": "İsteğiniz işlenirken bir hata oluştu.",
+    "embed_title": "{location} için Hava Durumu Raporu",
+    "embed_temp": "Sıcaklık",
+    "embed_feelslike": "Hissedilen",
+    "embed_humidity": "Nem",
+    "embed_condition": "Durum",
+    "embed_na": "Mevcut Değil",
+    "embed_wind": "Rüzgar",
+    "embed_pressure": "Basınç",
+    "embed_getting_location": "⏳ Konum verisi alınıyor...",
+    "embed_getting_location_ok": "✅ Konum verisi alınıyor... Tamam!",
+    "embed_getting_weather": "⏳ Hava durumu verisi alınıyor...",
+    "embed_getting_weather_ok": "✅ Hava durumu verisi alınıyor... Tamam!",
+    "embed_generating_report": "⏳ Rapor oluşturuluyor...",
+    "embed_generating_report_ok": "✅ Rapor oluşturuluyor... Tamam!"
 }

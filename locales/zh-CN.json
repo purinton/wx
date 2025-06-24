@@ -1,3 +1,20 @@
 {
-    "help": "这是帮助文本。"
+    "help": "**Wx 机器人 – 天气帮助**\n\n获取任何城市、地区或邮政编码的当前天气。\n\n**命令**  \n`/weather <location> [units]`\n\n**参数**  \n• `<location>` – 城市名称（如 London）、地区（如 CA）或邮政编码（如 90210）。必填。\n• `[units]` – 可选。温度单位：华氏度（F）或摄氏度（C）。\n\n**自动报告**  \n管理员可以通过在配置文件中指定 `channel_id`、位置和定时计划来配置自动报告。\n\n**示例**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "请提供一个位置。",
+    "invalidLocation": "提供的位置无效。",
+    "error": "处理您的请求时发生错误。",
+    "embed_title": "{location} 天气报告",
+    "embed_temp": "温度",
+    "embed_feelslike": "体感温度",
+    "embed_humidity": "湿度",
+    "embed_condition": "天气状况",
+    "embed_na": "无数据",
+    "embed_wind": "风速",
+    "embed_pressure": "气压",
+    "embed_getting_location": "⏳ 获取位置数据中...",
+    "embed_getting_location_ok": "✅ 获取位置数据完成！",
+    "embed_getting_weather": "⏳ 获取天气数据中...",
+    "embed_getting_weather_ok": "✅ 获取天气数据完成！",
+    "embed_generating_report": "⏳ 生成报告中...",
+    "embed_generating_report_ok": "✅ 生成报告完成！"
 }

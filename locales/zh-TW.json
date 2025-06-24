@@ -1,3 +1,20 @@
 {
-    "help": "這是幫助文本。"
+    "help": "**Wx Bot – 天氣幫助**\n\n獲取任何城市、地區或郵遞區號的即時天氣資料。\n\n**指令**  \n`/weather <location> [units]`\n\n**參數**  \n• `<location>` – 城市名稱（例如 London）、地區名稱（例如 CA）或郵遞區號（例如 90210）。必填。\n• `[units]` – 選填。溫度單位：華氏 (F) 或攝氏 (C)。\n\n**自動報告**  \n管理員可以通過配置檔中指定 `channel_id`、位置和排程來設定自動天氣報告。\n\n**範例**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "請提供地點。",
+    "invalidLocation": "提供的地點無效。",
+    "error": "處理您的請求時發生錯誤。",
+    "embed_title": "{location} 天氣報告",
+    "embed_temp": "溫度",
+    "embed_feelslike": "體感溫度",
+    "embed_humidity": "濕度",
+    "embed_condition": "天氣狀況",
+    "embed_na": "無資料",
+    "embed_wind": "風速",
+    "embed_pressure": "氣壓",
+    "embed_getting_location": "⏳ 取得位置資料中...",
+    "embed_getting_location_ok": "✅ 取得位置資料... 完成！",
+    "embed_getting_weather": "⏳ 取得天氣資料中...",
+    "embed_getting_weather_ok": "✅ 取得天氣資料... 完成！",
+    "embed_generating_report": "⏳ 產生報告中...",
+    "embed_generating_report_ok": "✅ 產生報告... 完成！"
 }
