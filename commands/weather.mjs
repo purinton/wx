@@ -31,7 +31,7 @@ export default async function ({ log, msg, owm, openai, report, locateConfig, re
 
         // Step 1: Get location data
         const { lat, lon, locationName, units, timezone } =
-            await report.resolveLocationAndUnits({ log, openai, locateConfig, location, locale, userUnits });
+            await report.resolveLocationAndUnits({ log, openai, location, locale, userUnits });
 
         let progressLines = [
             msg('embed_getting_location_ok', '✅ Getting location data... OK!'),
@@ -70,7 +70,7 @@ export default async function ({ log, msg, owm, openai, report, locateConfig, re
         }
 
         // Step 3: Get weather report
-        const weatherReport = await openai.getReport({ log, openai, reportConfig, weatherData, locationName, units, locale, timezone });
+        const weatherReport = await openai.getReport({ log, openai, weatherData, locationName, units, locale, timezone });
 
         progressLines[2] = msg('embed_generating_report_ok', '✅ Generating report... OK!');
         await interaction.editReply({

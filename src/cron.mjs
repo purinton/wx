@@ -1,24 +1,11 @@
-import fs from 'fs';
-import path from 'path';
-import { CronJob } from 'cron';
-import log from '../log.mjs';
-import {
-    resolveLocationAndUnits,
-    fetchWeather,
-    generateWeatherReport,
-    buildWeatherEmbed
-} from './report.mjs';
-
-export async function initCron(client, rootDir) {
-    const cronPath = path.join(rootDir, 'cron.json');
-    if (!fs.existsSync(cronPath)) {
+export async function initCron({ fs, log, client, cronFile, owm, openai, report, cron }) {
+    if (!fs.existsSync(cronFile)) {
         log.info('No cron.json found, skipping scheduled reports.');
         return;
     }
     let config;
     try {
-        const raw = fs.readFileSync(cronPath, 'utf8');
-        config = JSON.parse(raw);
+        config = JSON.parse(fs.readFileSync(cronFile, 'utf8'));
     } catch (err) {
         log.error('Failed to read or parse cron.json', err);
         return;
@@ -33,8 +20,9 @@ export async function initCron(client, rootDir) {
             continue;
         }
         try {
-            new CronJob(sched.cron, async () => {
+            cron.schedule(sched.cron, async () => {
                 try {
+                    log.debug('Scheduled weather report triggered', sched);
                     const channel = await client.channels.fetch(sched.channel_id);
                     if (!channel) {
                         log.warn('Scheduled report: Channel not found', sched.channel_id);
@@ -42,28 +30,33 @@ export async function initCron(client, rootDir) {
                     }
                     const locale = sched.locale || 'en-US';
                     const userUnits = sched.units || null;
-                    const { lat, lon, locationName, units } = await resolveLocationAndUnits(sched.location, locale, userUnits);
+                    const location = sched.location;
+                    // Step 1: Get location data
+                    const { lat, lon, locationName, units, timezone } =
+                        await report.resolveLocationAndUnits({ log, openai, location, locale, userUnits });
                     if (!lat || !lon) {
                         log.warn('Scheduled report: Invalid location', sched.location);
                         return;
                     }
-                    const weatherData = await fetchWeather(lat, lon, units);
+                    // Step 2: Get weather data
+                    const weatherData = await report.fetchWeather({ log, owm, lat, lon, units });
                     if (!weatherData) {
                         log.warn('Scheduled report: Failed to fetch weather', sched.location);
                         return;
                     }
-                    const weatherReport = await generateWeatherReport(weatherData, locationName, units, locale);
+                    // Step 3: Get weather report
+                    const weatherReport = await openai.getReport({ log, openai, weatherData, locationName, units, locale, timezone });
                     if (!weatherReport) {
                         log.warn('Scheduled report: Failed to generate report', sched.location);
                         return;
                     }
-                    const embed = buildWeatherEmbed(weatherData, weatherReport, locationName, units, locale);
+                    const embed = report.buildWeatherEmbed({ weatherData, weatherReport, locationName, units, msg: (k, d) => d });
                     await channel.send({ embeds: [embed] });
                     log.info(`Scheduled weather report sent to channel ${sched.channel_id} for ${sched.location}`);
                 } catch (err) {
                     log.error('Scheduled report error', err);
                 }
-            }, null, true, 'UTC');
+            }, { timezone: 'UTC' });
             log.info(`Scheduled weather report: ${sched.cron} for ${sched.location} in channel ${sched.channel_id}`);
         } catch (err) {
             log.error('Failed to schedule cron job', err);

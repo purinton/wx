@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 import 'dotenv/config';
+import cron from 'node-cron';
+import { initCron } from './src/cron.mjs';
 import * as report from './src/report.mjs';
 import * as owm from '@purinton/openweathermap';
 import { createOpenAI } from '@purinton/openai';
@@ -34,5 +36,19 @@ const client = await createDiscord({
         version
     }
 });
+
 registerSignals({ shutdownHook: () => client.destroy() });
 
+// Initialize scheduled weather reports
+initCron({
+    fs,
+    log,
+    client,
+    cronFile: path(import.meta, 'cron.json'),
+    owm,
+    openai,
+    report,
+    cron,
+    locateConfig,
+    reportConfig
+});
