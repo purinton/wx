@@ -1,0 +1,20 @@
+{
+    "help": "**Wx Bot – Weather Help**\n\nGet the current weather for any city, region, or ZIP/postal code.\n\n**Command**  \n`/weather <location> [units]`\n\n**Parameters**  \n• `<location>` – Name of a city (e.g. London), region (e.g. CA), or postal code (e.g. 90210). Required.\n• `[units]` – Optional. Temperature units: Fahrenheit (F) or Celsius (C).\n\n**Automated Reports**  \nOperators can configure automated reports by specifying `channel_id`(s), location(s), and a cron schedule in the config files.\n\n**Examples**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Please provide a location.",
+    "invalidLocation": "Invalid location provided.",
+    "error": "An error occurred while processing your request.",
+    "embed_title": "Weather Report for {location}",
+    "embed_temp": "Temperature",
+    "embed_feelslike": "Feels Like",
+    "embed_humidity": "Humidity",
+    "embed_condition": "Condition",
+    "embed_na": "N/A",
+    "embed_wind": "Wind",
+    "embed_pressure": "Pressure",
+    "embed_getting_location": "⏳ Getting location data...",
+    "embed_getting_location_ok": "✅ Getting location data... OK!",
+    "embed_getting_weather": "⏳ Getting weather data...",
+    "embed_getting_weather_ok": "✅ Getting weather data... OK!",
+    "embed_generating_report": "⏳ Generating report...",
+    "embed_generating_report_ok": "✅ Generating report... OK!"
+}

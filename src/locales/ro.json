@@ -1,0 +1,20 @@
+{
+    "help": "**Wx Bot – Ajutor Meteo**\n\nObține vremea curentă pentru orice oraș, regiune sau cod poștal.\n\n**Comandă**  \n`/weather <locație> [unități]`\n\n**Parametri**  \n• `<locație>` – Numele unui oraș (ex. Londra), regiune (ex. CA) sau cod poștal (ex. 90210). Obligatoriu.\n• `[unități]` – Opțional. Unitățile de temperatură: Fahrenheit (F) sau Celsius (C).\n\n**Rapoarte automate**  \nOperatorii pot configura rapoarte automate specificând `channel_id`(uri), locație(i) și un program cron în fișierele de configurare.\n\n**Exemple**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Te rog să furnizezi o locație.",
+    "invalidLocation": "Locație furnizată nevalidă.",
+    "error": "A apărut o eroare la procesarea cererii tale.",
+    "embed_title": "Raport meteo pentru {location}",
+    "embed_temp": "Temperatura",
+    "embed_feelslike": "Aparență termică",
+    "embed_humidity": "Umiditate",
+    "embed_condition": "Condiție",
+    "embed_na": "N/A",
+    "embed_wind": "Vânt",
+    "embed_pressure": "Presiune",
+    "embed_getting_location": "⏳ Se obțin datele locației...",
+    "embed_getting_location_ok": "✅ Se obțin datele locației... OK!",
+    "embed_getting_weather": "⏳ Se obțin datele meteo...",
+    "embed_getting_weather_ok": "✅ Se obțin datele meteo... OK!",
+    "embed_generating_report": "⏳ Se generează raportul...",
+    "embed_generating_report_ok": "✅ Se generează raportul... OK!"
+}

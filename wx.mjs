@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import 'dotenv/config';
-//import { createDb } from '@purinton/mysql';
+import * as owm from '@purinton/openweathermap';
+import { createOpenAI } from '@purinton/openai';
 import { createDiscord } from '@purinton/discord';
 import { log, fs, path, registerHandlers, registerSignals } from '@purinton/common';
 
@@ -9,26 +10,16 @@ registerSignals({ log });
 
 const packageJson = JSON.parse(fs.readFileSync(path(import.meta, 'package.json')), 'utf8');
 const version = packageJson.version;
-
-const presence = { activities: [{ name: `wx v${version}`, type: 4 }], status: 'online' };
-
-//const db = await createDb({ log });
-//registerSignals({ shutdownHook: () => db.end() });
+const presence = { activities: [{ name: `/weather v${version}`, type: 4 }], status: 'online' };
+const openai = await createOpenAI();
 const client = await createDiscord({
     log,
     rootDir: path(import.meta),
     context: {
-        //db,
+        owm,
+        openai,
         presence,
         version
-    },
-    intents: {
-        Guilds: true,
-        GuildMessages: true,
-        MessageContent: false,
-        GuildMembers: false,
-        GuildPresences: false,
-        GuildVoiceStates: false,
     }
 });
 registerSignals({ shutdownHook: () => client.destroy() });

@@ -1,0 +1,92 @@
+{
+    "model": "gpt-4.1-mini",
+    "messages": [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Given user_input: {user_input}\n- If user_input is numeric, assume it is a postal code.\n- Determine the latitude and longitude for user_input (4 decimal places).\n- Determine the formal place name (City, [State,] Country) and translate it to the specified locale: {locale}.\n- Identify the standard temperature units for this location (F or C).\n- Determine the IANA timezone name for this location (e.g., America/New_York).\n\nCall saveLatLon with lat, lon, translated name, units, and timezone.\nIf the location cannot be determined, call error_function.\nCall only one function, not both."
+                }
+            ]
+        }
+    ],
+    "response_format": {
+        "type": "text"
+    },
+    "tools": [
+        {
+            "type": "function",
+            "function": {
+                "name": "saveLatLon",
+                "description": "Delivers the latitude and longitude for a given location, along with its name, temperature units, and timezone.",
+                "parameters": {
+                    "type": "object",
+                    "required": [
+                        "lat",
+                        "lon",
+                        "location_name",
+                        "units",
+                        "timezone"
+                    ],
+                    "properties": {
+                        "lat": {
+                            "type": "number",
+                            "description": "Latitude of the location"
+                        },
+                        "lon": {
+                            "type": "number",
+                            "description": "Longitude of the location"
+                        },
+                        "location_name": {
+                            "type": "string",
+                            "description": "The name of the location (City, [State,] Country)"
+                        },
+                        "units": {
+                            "type": "string",
+                            "enum": [
+                                "F",
+                                "C"
+                            ],
+                            "description": "Temperature units: F (Fahrenheit) or C (Celsius)"
+                        },
+                        "timezone": {
+                            "type": "string",
+                            "description": "IANA timezone name for the location, e.g., America/New_York"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "strict": true
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "error_function",
+                "description": "Handles error messages",
+                "parameters": {
+                    "type": "object",
+                    "required": [
+                        "error_message"
+                    ],
+                    "properties": {
+                        "error_message": {
+                            "type": "string",
+                            "description": "The error message to be handled."
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "strict": true
+            }
+        }
+    ],
+    "tool_choice": "required",
+    "parallel_tool_calls": false,
+    "temperature": 1,
+    "max_completion_tokens": 2048,
+    "top_p": 1,
+    "frequency_penalty": 0,
+    "presence_penalty": 0
+}

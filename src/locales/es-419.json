@@ -1,0 +1,20 @@
+{
+    "help": "**Wx Bot – Ayuda del clima**\n\nObtén el clima actual de cualquier ciudad, región o código postal.\n\n**Comando**  \n`/weather <ubicación> [unidades]`\n\n**Parámetros**  \n• `<ubicación>` – Nombre de una ciudad (por ejemplo, Londres), región (por ejemplo, CA) o código postal (por ejemplo, 90210). Obligatorio.\n• `[unidades]` – Opcional. Unidades de temperatura: Fahrenheit (F) o Celsius (C).\n\n**Reportes automatizados**  \nLos operadores pueden configurar reportes automatizados especificando `channel_id`(s), ubicación(es) y un cronograma cron en los archivos de configuración.\n\n**Ejemplos**  \n```md\n/weather Tokio\n/weather Nueva York\n/weather 10001\n/weather París C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Por favor, proporciona una ubicación.",
+    "invalidLocation": "Ubicación proporcionada no válida.",
+    "error": "Ocurrió un error al procesar tu solicitud.",
+    "embed_title": "Reporte del clima para {location}",
+    "embed_temp": "Temperatura",
+    "embed_feelslike": "Sensación térmica",
+    "embed_humidity": "Humedad",
+    "embed_condition": "Condición",
+    "embed_na": "N/D",
+    "embed_wind": "Viento",
+    "embed_pressure": "Presión",
+    "embed_getting_location": "⏳ Obteniendo datos de ubicación...",
+    "embed_getting_location_ok": "✅ Obteniendo datos de ubicación... ¡OK!",
+    "embed_getting_weather": "⏳ Obteniendo datos del clima...",
+    "embed_getting_weather_ok": "✅ Obteniendo datos del clima... ¡OK!",
+    "embed_generating_report": "⏳ Generando reporte...",
+    "embed_generating_report_ok": "✅ Generando reporte... ¡OK!"
+}

@@ -1,0 +1,20 @@
+{
+    "help": "**Wx Bot – Bantuan Cuaca**\n\nDapatkan cuaca terkini untuk kota, wilayah, atau kode pos/pos mana pun.\n\n**Perintah**  \n`/weather <lokasi> [satuan]`\n\n**Parameter**  \n• `<lokasi>` – Nama kota (misalnya London), wilayah (misalnya CA), atau kode pos (misalnya 90210). Wajib.\n• `[satuan]` – Opsional. Satuan suhu: Fahrenheit (F) atau Celsius (C).\n\n**Laporan Otomatis**  \nOperator dapat mengatur laporan otomatis dengan menentukan `channel_id`(s), lokasi, dan jadwal cron dalam file konfigurasi.\n\n**Contoh**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Silakan berikan lokasi.",
+    "invalidLocation": "Lokasi yang diberikan tidak valid.",
+    "error": "Terjadi kesalahan saat memproses permintaan Anda.",
+    "embed_title": "Laporan Cuaca untuk {location}",
+    "embed_temp": "Suhu",
+    "embed_feelslike": "Terasa Seperti",
+    "embed_humidity": "Kelembapan",
+    "embed_condition": "Kondisi",
+    "embed_na": "N/A",
+    "embed_wind": "Angin",
+    "embed_pressure": "Tekanan",
+    "embed_getting_location": "⏳ Mendapatkan data lokasi...",
+    "embed_getting_location_ok": "✅ Mendapatkan data lokasi... OK!",
+    "embed_getting_weather": "⏳ Mendapatkan data cuaca...",
+    "embed_getting_weather_ok": "✅ Mendapatkan data cuaca... OK!",
+    "embed_generating_report": "⏳ Menghasilkan laporan...",
+    "embed_generating_report_ok": "✅ Menghasilkan laporan... OK!"
+}

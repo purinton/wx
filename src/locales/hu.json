@@ -1,0 +1,20 @@
+{
+    "help": "**Wx Bot – Időjárás Segítség**\n\nSzerezze meg a jelenlegi időjárást bármely városra, régióra vagy irányítószámra vonatkozóan.\n\n**Parancs**  \n`/weather <helyszín> [egységek]`\n\n**Paraméterek**  \n• `<helyszín>` – Város neve (pl. London), régió (pl. CA) vagy irányítószám (pl. 90210). Kötelező.\n• `[egységek]` – Opcionális. Hőmérséklet egységek: Fahrenheit (F) vagy Celsius (C).\n\n**Automatizált Jelentések**  \nAz üzemeltetők konfigurálhatnak automatizált jelentéseket úgy, hogy megadják a `channel_id`(ket), helyszíneket, és egy cron ütemezést a konfigurációs fájlokban.\n\n**Példák**  \n```md\n/weather Tokyo\n/weather New York\n/weather 10001\n/weather Paris C\n/weather \"San Francisco\" F\n```",
+    "noLocation": "Kérjük, adjon meg egy helyszínt.",
+    "invalidLocation": "Érvénytelen helyszín megadva.",
+    "error": "Hiba történt a kérés feldolgozása közben.",
+    "embed_title": "Időjárásjelentés: {location}",
+    "embed_temp": "Hőmérséklet",
+    "embed_feelslike": "Érzett hőmérséklet",
+    "embed_humidity": "Páratartalom",
+    "embed_condition": "Állapot",
+    "embed_na": "Nincs adat",
+    "embed_wind": "Szél",
+    "embed_pressure": "Légnyomás",
+    "embed_getting_location": "⏳ Helyadatok beszerzése...",
+    "embed_getting_location_ok": "✅ Helyadatok beszerzése... Kész!",
+    "embed_getting_weather": "⏳ Időjárásadatok beszerzése...",
+    "embed_getting_weather_ok": "✅ Időjárásadatok beszerzése... Kész!",
+    "embed_generating_report": "⏳ Jelentés készítése...",
+    "embed_generating_report_ok": "✅ Jelentés készítése... Kész!"
+}
