@@ -2,7 +2,7 @@
 
 ## @purinton/wx [![npm version](https://img.shields.io/npm/v/@purinton/wx.svg)](https://www.npmjs.com/package/@purinton/wx)[![license](https://img.shields.io/github/license/purinton/wx.svg)](LICENSE)[![build status](https://github.com/purinton/wx/actions/workflows/nodejs.yml/badge.svg)](https://github.com/purinton/wx/actions)
 
-A modern Discord app built with Node.js, based on the [@purinton/discord](https://github.com/purinton/discord) foundation.
+A modern Discord weather bot built with Node.js, OpenAI, and OpenWeatherMap, based on the [@purinton/discord](https://github.com/purinton/discord) foundation. Provides real-time weather, multi-language support, and automated weather reports for any location.
 
 ---
 
@@ -26,6 +26,9 @@ A modern Discord app built with Node.js, based on the [@purinton/discord](https:
 - Discord.js-based app with ESM support
 - Command and event handler architecture
 - Multi-language/localized responses
+- Real-time weather via OpenWeatherMap
+- Automated weather reports with cron scheduling
+- AI-powered location and report generation via OpenAI
 - Environment variable support via dotenv
 - Logging and signal handling via `@purinton/common`
 - Ready for deployment with systemd or Docker
@@ -42,7 +45,7 @@ A modern Discord app built with Node.js, based on the [@purinton/discord](https:
    ```
 
 2. **Set up your environment:**
-   - Copy `.env.example` to `.env` and fill in your Discord app token and other secrets.
+   - Copy `.env.example` to `.env` and fill in your Discord app token, OpenAI key, and other secrets.
    - Edit `package.json` (name, description, author, etc.)
    - Update this `README.md` as needed.
 
@@ -58,6 +61,7 @@ A modern Discord app built with Node.js, based on the [@purinton/discord](https:
 
 - All configuration is handled via environment variables in the `.env` file.
 - See `.env.example` for required and optional variables.
+- For scheduled weather reports, edit `cron.json` (see `cron.json.example`).
 
 ## Running as a Service (systemd)
 
