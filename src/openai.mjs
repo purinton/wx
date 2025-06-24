@@ -1,6 +1,6 @@
 export async function saveLatLon({ log, openai, location, locale }) {
     const locateConfig = JSON.parse(JSON.stringify(openai.locateConfig));
-    locateConfig.messages[0].content[0].text = config.messages[0].content[0].text
+    locateConfig.messages[0].content[0].text = locateConfig.messages[0].content[0].text
         .replace('{user_input}', location)
         .replace('{locale}', locale);
     log.debug('OpenAI locate config', locateConfig);
