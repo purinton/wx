@@ -4,11 +4,7 @@ export default async function ({ log, msg, owm, openai, report, locateConfig, re
         log.debug("Weather command interaction", interaction);
 
         const locale = interaction.guildLocale || interaction.locale || 'en-US';
-        log.debug("Locales", {
-            interactionLocale: interaction.locale,
-            guildLocale: interaction.guildLocale,
-            calculatedLocale: locale,
-        });
+        log.debug("Locales", { interactionLocale: interaction.locale, guildLocale: interaction.guildLocale, calculatedLocale: locale, });
 
         const location = interaction.options.getString('location') || null;
         const userUnits = interaction.options.getString('units') || null;
@@ -74,16 +70,7 @@ export default async function ({ log, msg, owm, openai, report, locateConfig, re
         }
 
         // Step 3: Get weather report
-        const weatherReport = await report.generateWeatherReport({
-            log,
-            openai,
-            reportConfig,
-            weatherData,
-            locationName,
-            units,
-            locale,
-            timezone
-        });
+        const weatherReport = await openai.getReport({ log, openai, reportConfig, weatherData, locationName, units, locale, timezone });
 
         progressLines[2] = msg('embed_generating_report_ok', '✅ Generating report... OK!');
         await interaction.editReply({
@@ -99,13 +86,7 @@ export default async function ({ log, msg, owm, openai, report, locateConfig, re
             return;
         }
 
-        const embed = report.buildWeatherEmbed({
-            weatherData,
-            weatherReport,
-            locationName,
-            units,
-            locale
-        });
+        const embed = report.buildWeatherEmbed({ weatherData, weatherReport, locationName, units, locale });
 
         await interaction.editReply({ embeds: [embed] });
     } catch (err) {
