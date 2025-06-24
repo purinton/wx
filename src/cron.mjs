@@ -39,7 +39,7 @@ export async function initCron({ fs, log, client, cronFile, owm, openai, report,
                         return;
                     }
                     // Step 2: Get weather data
-                    const weatherData = await report.fetchWeather({ log, owm, lat, lon, units });
+                    const weatherData = await report.fetchWeather({ log, owm, lat, lon, units, timezone });
                     if (!weatherData) {
                         log.warn('Scheduled report: Failed to fetch weather', sched.location);
                         return;

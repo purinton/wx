@@ -13,6 +13,15 @@ export async function resolveLocationAndUnits({ log, openai, location, locale, u
     return { lat, lon, locationName, units, timezone };
 }
 
+function getDateStrings(dt, tzOffset) {
+    const utcDate = new Date(dt * 1000);
+    const localDate = new Date((dt + tzOffset) * 1000);
+    return {
+        dt_text_utc: utcDate.toISOString().replace('T', ' ').replace(/\..+/, ''),
+        dt_text_local: localDate.toISOString().replace('T', ' ').replace(/\..+/, '')
+    };
+}
+
 export async function fetchWeather({ log, owm, lat, lon, units }) {
     try {
         const [currentData, forecastData] = await Promise.all([
@@ -23,6 +32,18 @@ export async function fetchWeather({ log, owm, lat, lon, units }) {
         if (!currentData || !forecastData) {
             log.warn("No weather data returned from OpenWeatherMap", { lat, lon, units });
             return null;
+        }
+        // Use timezone offset from currentData, fallback to 0
+        const tzOffset = typeof currentData.timezone === 'number' ? currentData.timezone : 0;
+        if (currentData.dt !== undefined) {
+            Object.assign(currentData, getDateStrings(currentData.dt, tzOffset));
+        }
+        if (Array.isArray(forecastData)) {
+            forecastData.forEach(entry => {
+                if (entry.dt !== undefined) {
+                    Object.assign(entry, getDateStrings(entry.dt, tzOffset));
+                }
+            });
         }
         return { currentData, forecastData };
     } catch (err) {
