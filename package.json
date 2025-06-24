@@ -2,7 +2,7 @@
     "name": "@purinton/wx",
     "type": "module",
     "version": "1.0.0",
-    "description": "A modern Discord app built with Node.js, based on the purinton/discord foundation.",
+    "description": "A Discord weather bot using OpenWeatherMap and OpenAI for real-time, multi-language weather reports and automated scheduling.",
     "main": "wx.mjs",
     "scripts": {
         "start": "node wx.mjs",
@@ -13,8 +13,16 @@
         "url": "git+https://github.com/purinton/wx.git"
     },
     "keywords": [
-        "wx",
-        "nodejs"
+        "discord",
+        "weather",
+        "openweathermap",
+        "openai",
+        "bot",
+        "multi-language",
+        "cron",
+        "automation",
+        "nodejs",
+        "esm"
     ],
     "author": "Russell Purinton <russell@purinton.us>",
     "license": "MIT",
