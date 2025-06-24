@@ -33,17 +33,17 @@ export async function fetchWeather({ log, owm, lat, lon, units }) {
 
 export function buildWeatherEmbed({ weatherData, weatherReport, locationName, units, msg }) {
     let windValue = msg('embed_na', 'N/A');
-    if (weatherData.wind && weatherData.wind.speed !== undefined) {
+    if (weatherData.currentData.wind && weatherData.currentData.wind.speed !== undefined) {
         if (units === 'F') {
-            windValue = `${msToMph(weatherData.wind.speed).toFixed(1)} mph`;
+            windValue = `${msToMph(weatherData.currentData.wind.speed).toFixed(1)} mph`;
         } else if (units === 'C') {
-            windValue = `${msToKmh(weatherData.wind.speed).toFixed(1)} km/h`;
+            windValue = `${msToKmh(weatherData.currentData.wind.speed).toFixed(1)} km/h`;
         } else {
-            windValue = `${weatherData.wind.speed} m/s`;
+            windValue = `${weatherData.currentData.wind.speed} m/s`;
         }
     }
-    const weatherIcon = weatherData.weather && weatherData.weather[0] && weatherData.weather[0].icon
-        ? `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`
+    const weatherIcon = weatherData.currentData.weather && weatherData.currentData.weather[0] && weatherData.currentData.weather[0].icon
+        ? `https://openweathermap.org/img/wn/${weatherData.currentData.weather[0].icon}@2x.png`
         : null;
     return {
         title: msg('embed_title', `Weather Report for ${locationName}`).replace('{location}', locationName),
@@ -52,23 +52,23 @@ export function buildWeatherEmbed({ weatherData, weatherReport, locationName, un
         fields: [
             {
                 name: msg('embed_temp', 'Temperature'),
-                value: `${weatherData.main.temp}\u00b0${units}`,
+                value: `${weatherData.currentData.main.temp}\u00b0${units}`,
                 inline: true
             },
             {
                 name: msg('embed_feelslike', 'Feels Like'),
-                value: `${weatherData.main.feels_like}\u00b0${units}`,
+                value: `${weatherData.currentData.main.feels_like}\u00b0${units}`,
                 inline: true
             },
             {
                 name: msg('embed_humidity', 'Humidity'),
-                value: `${weatherData.main.humidity}%`,
+                value: `${weatherData.currentData.main.humidity}%`,
                 inline: true
             },
             {
                 name: msg('embed_condition', 'Condition'),
-                value: weatherData.weather && weatherData.weather[0] && weatherData.weather[0].description
-                    ? weatherData.weather[0].description
+                value: weatherData.currentData.weather && weatherData.currentData.weather[0] && weatherData.currentData.weather[0].description
+                    ? weatherData.currentData.weather[0].description
                     : msg('embed_na', 'N/A'),
                 inline: true
             },
@@ -79,10 +79,10 @@ export function buildWeatherEmbed({ weatherData, weatherReport, locationName, un
             },
             {
                 name: msg('embed_pressure', 'Pressure'),
-                value: weatherData.main && weatherData.main.pressure !== undefined
+                value: weatherData.currentData.main && weatherData.currentData.main.pressure !== undefined
                     ? (units === 'F'
-                        ? `${hpaToInHg(weatherData.main.pressure).toFixed(2)} inHg`
-                        : `${weatherData.main.pressure} hPa`)
+                        ? `${hpaToInHg(weatherData.currentData.main.pressure).toFixed(2)} inHg`
+                        : `${weatherData.currentData.main.pressure} hPa`)
                     : msg('embed_na', 'N/A'),
                 inline: true
             }
