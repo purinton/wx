@@ -31,8 +31,8 @@ export async function fetchWeather({ log, owm, lat, lon, units }) {
     }
 }
 
-export function buildWeatherEmbed({ weatherData, weatherReport, locationName, units, locale }) {
-    let windValue = getMsg(locale, 'embed_na', 'N/A');
+export function buildWeatherEmbed({ weatherData, weatherReport, locationName, units, msg }) {
+    let windValue = msg('embed_na', 'N/A');
     if (weatherData.wind && weatherData.wind.speed !== undefined) {
         if (units === 'F') {
             windValue = `${msToMph(weatherData.wind.speed).toFixed(1)} mph`;
@@ -46,44 +46,44 @@ export function buildWeatherEmbed({ weatherData, weatherReport, locationName, un
         ? `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`
         : null;
     return {
-        title: getMsg(locale, 'embed_title', `Weather Report for ${locationName}`).replace('{location}', locationName),
+        title: msg(locale, 'embed_title', `Weather Report for ${locationName}`).replace('{location}', locationName),
         color: 0x808080,
         description: weatherReport,
         fields: [
             {
-                name: getMsg(locale, 'embed_temp', 'Temperature'),
+                name: msg('embed_temp', 'Temperature'),
                 value: `${weatherData.main.temp}\u00b0${units}`,
                 inline: true
             },
             {
-                name: getMsg(locale, 'embed_feelslike', 'Feels Like'),
+                name: msg('embed_feelslike', 'Feels Like'),
                 value: `${weatherData.main.feels_like}\u00b0${units}`,
                 inline: true
             },
             {
-                name: getMsg(locale, 'embed_humidity', 'Humidity'),
+                name: msg('embed_humidity', 'Humidity'),
                 value: `${weatherData.main.humidity}%`,
                 inline: true
             },
             {
-                name: getMsg(locale, 'embed_condition', 'Condition'),
+                name: msg('embed_condition', 'Condition'),
                 value: weatherData.weather && weatherData.weather[0] && weatherData.weather[0].description
                     ? weatherData.weather[0].description
-                    : getMsg(locale, 'embed_na', 'N/A'),
+                    : msg('embed_na', 'N/A'),
                 inline: true
             },
             {
-                name: getMsg(locale, 'embed_wind', 'Wind'),
+                name: msg('embed_wind', 'Wind'),
                 value: windValue,
                 inline: true
             },
             {
-                name: getMsg(locale, 'embed_pressure', 'Pressure'),
+                name: msg('embed_pressure', 'Pressure'),
                 value: weatherData.main && weatherData.main.pressure !== undefined
                     ? (units === 'F'
                         ? `${hpaToInHg(weatherData.main.pressure).toFixed(2)} inHg`
                         : `${weatherData.main.pressure} hPa`)
-                    : getMsg(locale, 'embed_na', 'N/A'),
+                    : msg('embed_na', 'N/A'),
                 inline: true
             }
         ],

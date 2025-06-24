@@ -86,7 +86,7 @@ export default async function ({ log, msg, owm, openai, report, locateConfig, re
             return;
         }
 
-        const embed = report.buildWeatherEmbed({ weatherData, weatherReport, locationName, units, locale });
+        const embed = report.buildWeatherEmbed({ weatherData, weatherReport, locationName, units, msg });
 
         await interaction.editReply({ embeds: [embed] });
     } catch (err) {
