@@ -1,7 +1,7 @@
 {
     "name": "@purinton/wx",
     "type": "module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A Discord weather bot using OpenWeatherMap and OpenAI for real-time, multi-language weather reports and automated scheduling.",
     "main": "wx.mjs",
     "scripts": {
