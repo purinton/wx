@@ -1,7 +1,7 @@
 import { msToMph, msToKmh, hpaToInHg } from './convert.mjs';
 
 export async function resolveLocationAndUnits({ log, openai, location, locale, userUnits }) {
-    const result = await openai.saveLatLon({ openai, location, locale });
+    const result = await openai.saveLatLon({ log, openai, location, locale });
     log.debug('[resolveLocationAndUnits] saveLatLon result:', result);
     const arr = Array.isArray(result) ? result : Object.values(result);
     const [lat, lon, locationNameOrig, aiUnits, timezone] = arr;
@@ -31,7 +31,7 @@ export async function fetchWeather({ log, owm, lat, lon, units }) {
     }
 }
 
-export function buildWeatherEmbed({weatherData, weatherReport, locationName, units, locale}) {
+export function buildWeatherEmbed({ weatherData, weatherReport, locationName, units, locale }) {
     let windValue = getMsg(locale, 'embed_na', 'N/A');
     if (weatherData.wind && weatherData.wind.speed !== undefined) {
         if (units === 'F') {
