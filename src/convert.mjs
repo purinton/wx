@@ -12,9 +12,3 @@ export function msToKmh(ms) {
 export function hpaToInHg(hpa) {
     return hpa * 0.02953;
 }
-
-export const createConvertHelpers = () => ({
-    msToMph,
-    msToKmh,
-    hpaToInHg,
-});

@@ -1,32 +1,37 @@
-import { saveLatLon, getReport } from './openai.mjs';
-import { getWeatherData } from './owm.mjs';
 import { msToMph, msToKmh, hpaToInHg } from './convert.mjs';
-import { getMsg } from '../locales.mjs';
-import log from '../log.mjs';
 
-export async function resolveLocationAndUnits(location, locale, userUnits) {
-    const result = await saveLatLon(location, locale);
-    log.debug && log.debug('[resolveLocationAndUnits] saveLatLon result:', result);
+export async function resolveLocationAndUnits({ log, openai, location, locale, userUnits }) {
+    const result = await openai.saveLatLon({ openai, location, locale });
+    log.debug('[resolveLocationAndUnits] saveLatLon result:', result);
     const arr = Array.isArray(result) ? result : Object.values(result);
     const [lat, lon, locationNameOrig, aiUnits, timezone] = arr;
-    if (!timezone) {
-        log.warn && log.warn('[resolveLocationAndUnits] No timezone returned from saveLatLon!', { result });
+    if (!lat || !lon || !locationNameOrig || !aiUnits || !timezone) {
+        log.warn('[resolveLocationAndUnits] Missing results', { result });
     }
     const locationName = locationNameOrig || location;
     const units = userUnits || aiUnits;
     return { lat, lon, locationName, units, timezone };
 }
 
-export async function fetchWeather(lat, lon, units) {
-    return await getWeatherData(lat, lon, units);
+export async function fetchWeather({ log, owm, lat, lon, units }) {
+    try {
+        const [currentData, forecastData] = await Promise.all([
+            owm.getCurrent(lat, lon, { units }),
+            owm.get24hForecast(lat, lon, { units })
+        ]);
+        log.debug('Fetched weather data', { lat, lon, units, currentData, forecastData });
+        if (!currentData || !forecastData) {
+            log.warn("No weather data returned from OpenWeatherMap", { lat, lon, units });
+            return null;
+        }
+        return { currentData, forecastData };
+    } catch (err) {
+        log.error("Error fetching weather data", { lat, lon, units, error: err.message });
+        return null;
+    }
 }
 
-export async function generateWeatherReport(weatherData, locationName, units, locale, timezone) {
-    const report = await getReport(weatherData, locationName, units, locale, timezone);
-    return report;
-}
-
-export function buildWeatherEmbed(weatherData, weatherReport, locationName, units, locale) {
+export function buildWeatherEmbed({weatherData, weatherReport, locationName, units, locale}) {
     let windValue = getMsg(locale, 'embed_na', 'N/A');
     if (weatherData.wind && weatherData.wind.speed !== undefined) {
         if (units === 'F') {

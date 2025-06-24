@@ -1,16 +1,5 @@
-import {
-    resolveLocationAndUnits,
-    fetchWeather,
-    generateWeatherReport,
-    buildWeatherEmbed
-} from '../custom/report.mjs';
-
-export default async function ({ log, msg }, interaction, {
-    resolveLocationAndUnitsDep = resolveLocationAndUnits,
-    fetchWeatherDep = fetchWeather,
-    generateWeatherReportDep = generateWeatherReport,
-    buildWeatherEmbedDep = buildWeatherEmbed,
-} = {}) {
+// commands/weather.mjs
+export default async function ({ log, msg, owm, openai, report, locateConfig, reportConfig }, interaction) {
     try {
         log.debug("Weather command interaction", interaction);
 
@@ -37,22 +26,23 @@ export default async function ({ log, msg }, interaction, {
         const progressEmbed = {
             color: 0x808080, // gray
             description: [
-                msg('embed_getting_location', '[23f[23f Getting location data...'),
-                msg('embed_getting_weather', '[23f[23f Getting weather data...'),
-                msg('embed_generating_report', '[23f[23f Generating report...'),
+                msg('embed_getting_location', '⏳ Getting location data...'),
+                msg('embed_getting_weather', '⏳ Getting weather data...'),
+                msg('embed_generating_report', '⏳ Generating report...'),
             ].join('\n'),
         };
         await interaction.reply({ embeds: [progressEmbed], flags: 1 << 6 });
 
         // Step 1: Get location data
         const { lat, lon, locationName, units, timezone } =
-            await resolveLocationAndUnitsDep(location, locale, userUnits);
+            await report.resolveLocationAndUnits({ log, openai, locateConfig, location, locale, userUnits });
 
         let progressLines = [
-            msg('embed_getting_location_ok', '[23f[23f Getting location data... OK!'),
-            msg('embed_getting_weather', '[23f[23f Getting weather data...'),
-            msg('embed_generating_report', '[23f[23f Generating report...'),
+            msg('embed_getting_location_ok', '✅ Getting location data... OK!'),
+            msg('embed_getting_weather', '⏳ Getting weather data...'),
+            msg('embed_generating_report', '⏳ Generating report...'),
         ];
+
         await interaction.editReply({
             embeds: [{ color: 0x808080, description: progressLines.join('\n') }],
         });
@@ -67,9 +57,9 @@ export default async function ({ log, msg }, interaction, {
         }
 
         // Step 2: Get weather data
-        const weatherData = await fetchWeatherDep(lat, lon, units);
+        const weatherData = await report.fetchWeather({ log, owm, lat, lon, units });
 
-        progressLines[1] = msg('embed_getting_weather_ok', '[23f[23f Getting weather data... OK!');
+        progressLines[1] = msg('embed_getting_weather_ok', '✅ Getting weather data... OK!');
         await interaction.editReply({
             embeds: [{ color: 0x808080, description: progressLines.join('\n') }],
         });
@@ -84,15 +74,18 @@ export default async function ({ log, msg }, interaction, {
         }
 
         // Step 3: Get weather report
-        const weatherReport = await generateWeatherReportDep(
+        const weatherReport = await report.generateWeatherReport({
+            log,
+            openai,
+            reportConfig,
             weatherData,
             locationName,
             units,
             locale,
             timezone
-        );
+        });
 
-        progressLines[2] = msg('embed_generating_report_ok', '[23f[23f Generating report... OK!');
+        progressLines[2] = msg('embed_generating_report_ok', '✅ Generating report... OK!');
         await interaction.editReply({
             embeds: [{ color: 0x808080, description: progressLines.join('\n') }],
         });
@@ -106,14 +99,13 @@ export default async function ({ log, msg }, interaction, {
             return;
         }
 
-        // Final weather embed (replace progress)
-        const embed = buildWeatherEmbedDep(
+        const embed = report.buildWeatherEmbed({
             weatherData,
             weatherReport,
             locationName,
             units,
             locale
-        );
+        });
 
         await interaction.editReply({ embeds: [embed] });
     } catch (err) {
