@@ -1,0 +1,18 @@
+{
+    "schedules": [
+        {
+            "cron": "0 9 * * *",
+            "channel_id": "123456789012345678",
+            "location": "New York, NY",
+            "units": "F",
+            "locale": "en-US"
+        },
+        {
+            "cron": "0 12 * * *",
+            "channel_id": "987654321098765432",
+            "location": "London, UK",
+            "units": "C",
+            "locale": "en-GB"
+        }
+    ]
+}
