@@ -369,8 +369,7 @@
                 "zh-TW": "僅顯示回應給您（臨時訊息）"
             },
             "type": 5,
-            "required": false,
-            "default": true
+            "required": false
         }
     ],
     "default_permission": true,
