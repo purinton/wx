@@ -1,5 +1,5 @@
 // commands/weather.mjs
-export default async function ({ log, msg, owm, openai, report, locateConfig, reportConfig }, interaction) {
+export default async function ({ log, msg, owm, openai, report }, interaction) {
     try {
         log.debug("Weather command interaction", interaction);
 
@@ -8,17 +8,21 @@ export default async function ({ log, msg, owm, openai, report, locateConfig, re
 
         const location = interaction.options.getString('location') || null;
         const userUnits = interaction.options.getString('units') || null;
+        let ephemeral = true;
+        if (typeof interaction.options.getBoolean === 'function') {
+            const ephemeralOpt = interaction.options.getBoolean('ephemeral');
+            if (typeof ephemeralOpt === 'boolean') ephemeral = ephemeralOpt;
+        }
 
         if (!location) {
             log.warn("No location provided for weather command");
             await interaction.reply({
                 content: msg('noLocation', 'Please provide a location.'),
-                flags: 1 << 6, // ephemeral
+                flags: ephemeral ? 1 << 6 : undefined,
             });
             return;
         }
 
-        // Initial progress embed
         const progressEmbed = {
             color: 0x808080, // gray
             description: [
@@ -27,9 +31,8 @@ export default async function ({ log, msg, owm, openai, report, locateConfig, re
                 msg('embed_generating_report', '⏳ Generating report...'),
             ].join('\n'),
         };
-        await interaction.reply({ embeds: [progressEmbed], flags: 1 << 6 });
+        await interaction.reply({ embeds: [progressEmbed], flags: ephemeral ? 1 << 6 : undefined });
 
-        // Step 1: Get location data
         const { lat, lon, locationName, units, timezone } =
             await report.resolveLocationAndUnits({ log, openai, location, locale, userUnits });
 
@@ -52,7 +55,6 @@ export default async function ({ log, msg, owm, openai, report, locateConfig, re
             return;
         }
 
-        // Step 2: Get weather data
         const weatherData = await report.fetchWeather({ log, owm, lat, lon, units });
 
         progressLines[1] = msg('embed_getting_weather_ok', '✅ Getting weather data... OK!');
@@ -69,7 +71,6 @@ export default async function ({ log, msg, owm, openai, report, locateConfig, re
             return;
         }
 
-        // Step 3: Get weather report
         const weatherReport = await openai.getReport({ log, openai, weatherData, locationName, units, locale, timezone });
 
         progressLines[2] = msg('embed_generating_report_ok', '✅ Generating report... OK!');
