@@ -1,7 +1,7 @@
 {
     "name": "@purinton/wx",
     "type": "module",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A Discord weather bot using OpenWeatherMap and OpenAI for real-time, multi-language weather reports and automated scheduling.",
     "main": "wx.mjs",
     "scripts": {
@@ -31,7 +31,7 @@
     },
     "homepage": "https://github.com/purinton/wx#readme",
     "devDependencies": {
-        "jest": "^30.0.2"
+        "jest": "^30.0.4"
     },
     "jest": {
         "testEnvironment": "node",
@@ -42,11 +42,11 @@
         ]
     },
     "dependencies": {
-        "@purinton/common": "^1.0.16",
-        "@purinton/discord": "^1.0.11",
-        "@purinton/openai": "^1.0.1",
-        "@purinton/openweathermap": "^1.0.4",
-        "dotenv": "^16.5.0",
-        "node-cron": "^4.1.1"
+        "@purinton/common": "^1.0.17",
+        "@purinton/discord": "^1.0.14",
+        "@purinton/openai": "^1.0.2",
+        "@purinton/openweathermap": "^1.0.5",
+        "dotenv": "^17.2.0",
+        "node-cron": "^4.2.1"
     }
 }
